@@ -1,1 +1,1 @@
-# k8s-part3
+# Kubernetes - III: EKS, ALB, Auto Scaling
