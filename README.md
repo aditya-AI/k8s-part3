@@ -64,7 +64,7 @@ eksctl create iamserviceaccount \
 --approve
 ```
 
-### Install AWS Load Balancer Controller
+### Deploy AWS Load Balancer Controller
 
 ```bash
 helm repo add eks https://aws.github.io/eks-charts
