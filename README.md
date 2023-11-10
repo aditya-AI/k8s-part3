@@ -139,6 +139,7 @@ kubectl apply -f hpa.yaml
 ## Deploy the GPT2 Model
 
 ```bash
+cd fastapi-helm/
 helm install gpt2-eks . --values values.yaml
 ```
 
@@ -154,30 +155,6 @@ pip install locust
 # run locust
 locust -f stress-testing.py
 ```
-```
-helm repo add eks https://aws.github.io/eks-charts
-helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system --set clusterName=basic-cluster --set serviceAccount.create=false --set serviceAccount.name=aws-load-balancer-controller
-
-cd fastapi-helm/
-helm install gpt2-eks . --values values.yaml
-
-kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
-
-helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
-helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard
-
-
-
-
-
-
-aws iam create-policy --policy-name AWSClusterAutoScalerIAMPolicy --policy-document file://cas-iam-policy.json
-
-
-
-
-
-curl -o cluster-autoscaler-autodiscover.yaml https://raw.githubusercontent.com/kubernetes/autoscaler/master/cluster-autoscaler/cloudprovider/aws/examples/cluster-autoscaler-autodiscover.yaml
 
 ## Logs
 
