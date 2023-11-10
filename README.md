@@ -62,4 +62,4 @@ curl -o cluster-autoscaler-autodiscover.yaml https://raw.githubusercontent.com/k
 - [kubectl get all -A -o yaml](https://github.com/aditya-AI/k8s-part3/blob/main/logs/all-resources.yaml)
 - [kubectl top pod before load](https://github.com/aditya-AI/k8s-part3/blob/main/logs/top-pod-before-load.png)
 - [kubectl top pod after load](https://github.com/aditya-AI/k8s-part3/blob/main/logs/top-pod-after-load.png)
-- [kubectl describe <your main ingress>](https://github.com/aditya-AI/k8s-part3/blob/main/logs/describe-ingress.png)
+- [kubectl describe your main ingress](https://github.com/aditya-AI/k8s-part3/blob/main/logs/describe-ingress.png)
