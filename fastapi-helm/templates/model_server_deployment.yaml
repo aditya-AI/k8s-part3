@@ -13,6 +13,19 @@ spec:
             labels:
                 app: {{ .Values.appName.model }}
         spec:
+            # nodeSelector:    
+            # eks.amazonaws.com/capacityType: SPOT
+            nodeSelector:
+                role: spot
+            # affinity:
+            #   nodeAffinity:
+            #     requiredDuringSchedulingIgnoredDuringExecution:
+            #       nodeSelectorTerms:
+            #         - matchExpressions:
+            #             - key: "k8s.io/cluster-autoscaler/node-template/label/role"
+            #               operator: In
+            #               values:
+            #                 - spot
             containers:
                 - name: {{ .Values.appName.model }}
                   image: {{ .Values.image.modelServer }}

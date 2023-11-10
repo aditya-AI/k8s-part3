@@ -4,18 +4,40 @@ kind: ClusterConfig
 metadata:
   name: basic-cluster
   region: ap-south-1
+  version: "1.27"
 
 managedNodeGroups:
-  - name: ng-dedicated-1
+  # - name: ng-dedicated-1
+  #   instanceType: t3a.medium
+  #   desiredCapacity: 1
+  #   volumeSize: 40
+  #   volumeType: gp3
+  #   ssh:
+  #     allow: true # will use ~/.ssh/id_rsa.pub as the default ssh key
+  - name: ng-dedicated-2
     instanceType: t3a.medium
-    desiredCapacity: 1
+    desiredCapacity: 2
     volumeSize: 40
     volumeType: gp3
     ssh:
       allow: true # will use ~/.ssh/id_rsa.pub as the default ssh key
-  - name: ng-spot-1
+  # - name: ng-spot-1
+  #   instanceType: t3a.medium
+  #   desiredCapacity: 4
+  #   spot: true
+  #   labels:
+  #     role: spot
+  - name: ng-spot-2
     instanceType: t3a.medium
-    desiredCapacity: 4
+    minSize: 0
+    maxSize: 5
+    desiredCapacity: 0
     spot: true
     labels:
       role: spot
+    propagateASGTags: true
+    iam:
+      withAddonPolicies:
+        autoScaler: true    
+
+      
