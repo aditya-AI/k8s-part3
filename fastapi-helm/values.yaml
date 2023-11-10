@@ -1,0 +1,20 @@
+appName:
+  model: 'model-serve'
+  web: 'web-serve'
+  ingress: "web-ingress"
+
+model: "gpt2"
+
+configMap:
+  modelServer: "model-config-v1.0"
+  redis: "redis-config-v1.0"
+
+secretKey:
+  redis: "redis-secret-v1.0"
+
+image:
+  modelServer: "public.ecr.aws/f1k8c0z2/k8s-mlops:model"
+  webServer: "public.ecr.aws/f1k8c0z2/k8s-mlops:web"
+  redis: "redis:7.2.1"
+
+# hostname: "fastapi.localhost"

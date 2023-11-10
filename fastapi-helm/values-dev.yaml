@@ -1,0 +1,5 @@
+appName:
+  model: 'model-serve-dev'
+
+namespace: 'dev'
+
