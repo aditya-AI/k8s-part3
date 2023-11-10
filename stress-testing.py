@@ -13,4 +13,3 @@ class MyUser(HttpUser):
             "prompt": unique_prompt
         }
         self.client.post("/generate-text", data=form_data)
-kubectl describe <your main ingress>
